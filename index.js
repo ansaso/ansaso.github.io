@@ -1,30 +1,18 @@
-function setup() {
-    let numBalls = 20;
-    let spring = 0.05;
-    let friction = -0.1;
-    let balls = [];
-    var canvas = createCanvas(windowWidth, windowHeight);
-    canvas.background(0)
-    canvas.parent('background')
-    for (let i = 0; i < numBalls; i++) {
-        balls[i] = new Ball(
-          random(width),
-          random(height),
-          random(30, 70),
-          i,
-          balls
-        );
-      }
- }
+
+
+let numBalls = 20;
+let spring = 0.05;
+let friction = -0.1;
+let balls = [];
 
 class Ball {
-    constructor(x, y, r, id, oin) {
-      this.x = x;
-      this.y = y;
+    constructor(xin, yin, din, idin, oin) {
+      this.x = xin;
+      this.y = yin;
       this.vx = 0;
       this.vy = 0;
-      this.diameter = d;
-      this.id = id;
+      this.diameter = din;
+      this.id = idin;
       this.others = oin;
     }
   
@@ -76,6 +64,24 @@ class Ball {
     }
   }
 
+
+
+
+function setup() {
+    var canvas = createCanvas(windowWidth, windowHeight);
+    canvas.background(0)
+    canvas.parent('background')
+    for (let i = 0; i < numBalls; i++) {
+        balls[i] = new Ball(
+          random(width),
+          random(height),
+          random(30, 70),
+          i,
+          balls
+        );
+      }
+ }
+ 
  function draw() {
     background(0);
     balls.forEach(ball => {
