@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js"></script>
-        <script src="./index.js"></script>
         <script>
         function f() {
           const fs = require('fs')
@@ -10,41 +8,13 @@
           const dir = '.'
           const files = fs.readdirSync(dir)
 
-          for (const file of files) {
-            console.log(file)
-          }   
+          return String(files) 
         }
 
-        document.getElementById("jim").onclick = f;
+        document.getElementById("folder").innerHTML = f();
         </script>
     </head>
-    <style>
-      #background {
-        position:relative;
-      }
-
-      #overlay {
-        position: absolute;
-        width: 90%;
-        height: 80%;
-        margin: 5%;
-        background-color: rgba(141, 131, 133, 0.726);
-      }
-
-      #content {
-        padding: 5%
-      }
-
-      body, html{
-        margin:0;
-        padding:0;
-      }
-    </style>
     <body>
-        <div id="background">
-          <button id="jim"></button>
-          <p style="color:crimson;position:absolute;">coming soom</p>
-          <a href="./dump/temp.html">test_link</a>
-        </div>
+        <p id="folder"></p>
     </body>
 </html>
