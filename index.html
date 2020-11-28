@@ -3,6 +3,20 @@
     <head>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js"></script>
         <script src="./index.js"></script>
+        <script>
+        function f() {
+          const fs = require('fs')
+
+          const dir = '.'
+          const files = fs.readdirSync(dir)
+
+          for (const file of files) {
+            console.log(file)
+          }   
+        }
+
+        document.getElementById("jim").onclick = f;
+        </script>
     </head>
     <style>
       #background {
@@ -28,6 +42,7 @@
     </style>
     <body>
         <div id="background">
+          <button id="jim"></button>
           <p style="color:crimson;position:absolute;">coming soom</p>
           <a href="./dump/temp.html">test_link</a>
         </div>
